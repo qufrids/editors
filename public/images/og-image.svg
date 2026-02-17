@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0F2B4A"/>
+  <text x="600" y="260" font-family="Georgia, serif" font-size="72" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Oxford Editors</text>
+  <text x="600" y="330" font-family="Arial, sans-serif" font-size="28" fill="#94A3B8" text-anchor="middle">Academic Services &amp; Higher Education Support</text>
+  <text x="600" y="400" font-family="Arial, sans-serif" font-size="18" fill="#64748B" text-anchor="middle">oxfordeditors.co.uk</text>
+  <rect x="480" y="350" width="240" height="2" rx="1" fill="#3B82F6" opacity="0.5"/>
+</svg>
