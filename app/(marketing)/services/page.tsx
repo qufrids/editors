@@ -25,15 +25,15 @@ export default function ServicesPage() {
 
   return (
     <>
-      <section className="bg-gradient-to-b from-primary-50 via-white to-white py-14 md:py-20">
+      <section className="bg-gradient-to-b from-cream-200 via-cream to-cream py-14 md:py-20">
         <div className="container">
-          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary-700">
+          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-gold">
             What We Offer
           </p>
-          <h1 className="mt-3 max-w-3xl font-display text-4xl font-semibold leading-tight text-navy-900 md:text-5xl">
+          <h1 className="mt-3 max-w-3xl font-display text-4xl font-semibold leading-tight text-ink md:text-5xl">
             Academic Services
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-navy-700">
+          <p className="mt-4 max-w-2xl text-lg text-ink-light">
             From essay writing to dissertation support, our expert team helps UK students achieve
             their academic goals with confidence.
           </p>
@@ -47,15 +47,15 @@ export default function ServicesPage() {
               <Link
                 key={service.id}
                 href={`/services/${service.slug}`}
-                className="group rounded-xl border border-navy-100 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md"
+                className="group rounded-xl border border-ink/10 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md"
               >
-                <h2 className="font-display text-xl font-semibold text-navy-900 group-hover:text-primary-700">
+                <h2 className="font-display text-xl font-semibold text-ink group-hover:text-gold">
                   {service.title}
                 </h2>
-                <p className="mt-2 text-sm leading-7 text-navy-600">
+                <p className="mt-2 text-sm leading-7 text-ink-light">
                   {service.subtitle}
                 </p>
-                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary-700">
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-gold">
                   Learn more
                   <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
                 </span>

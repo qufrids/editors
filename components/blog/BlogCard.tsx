@@ -11,7 +11,7 @@ type BlogCardProps = {
 
 export function BlogCard({ post }: BlogCardProps) {
   return (
-    <article className="group overflow-hidden rounded-xl border border-navy-100 bg-white shadow-sm transition-shadow duration-300 hover:shadow-md">
+    <article className="group overflow-hidden rounded-xl border border-ink/10 bg-white shadow-sm transition-shadow duration-300 hover:shadow-md">
       <Link href={`/blog/${post.slug}`} className="block">
         <div className="relative h-52 w-full overflow-hidden">
           <Image
@@ -21,35 +21,35 @@ export function BlogCard({ post }: BlogCardProps) {
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
-          <span className="absolute left-3 top-3 rounded-full bg-primary-600 px-3 py-1 text-xs font-semibold text-white">
+          <span className="absolute left-3 top-3 rounded-full bg-gold px-3 py-1 text-xs font-semibold text-ink">
             {post.category}
           </span>
         </div>
       </Link>
 
       <div className="p-5">
-        <div className="flex items-center gap-3 text-xs text-navy-500">
+        <div className="flex items-center gap-3 text-xs text-ink-muted">
           <span className="flex items-center gap-1">
             <Calendar className="h-3.5 w-3.5" />
             {formatDate(post.published_at)}
           </span>
-          <span className="h-3 w-px bg-navy-200" />
+          <span className="h-3 w-px bg-ink/10" />
           <span>{post.author}</span>
         </div>
 
         <Link href={`/blog/${post.slug}`} className="mt-3 block">
-          <h2 className="line-clamp-2 font-display text-lg font-semibold text-navy-900 transition-colors group-hover:text-primary-700">
+          <h2 className="line-clamp-2 font-display text-lg font-semibold text-ink transition-colors group-hover:text-gold-700">
             {post.title}
           </h2>
         </Link>
 
-        <p className="mt-2 line-clamp-3 text-sm leading-6 text-navy-600">
+        <p className="mt-2 line-clamp-3 text-sm leading-6 text-ink-light">
           {post.excerpt}
         </p>
 
         <Link
           href={`/blog/${post.slug}`}
-          className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary-700 transition-colors hover:text-primary-800"
+          className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-gold transition-colors hover:text-gold-700"
         >
           Read more
           <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />

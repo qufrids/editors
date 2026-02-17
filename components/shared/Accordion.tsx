@@ -86,7 +86,7 @@ export function Accordion({
         return (
           <div
             key={`${item.title}-${index}`}
-            className="rounded-xl border border-navy-100 bg-white shadow-sm transition-shadow hover:shadow-md"
+            className="rounded-xl border border-ink/10 bg-white shadow-sm transition-shadow hover:shadow-md"
           >
             <h3>
               <button
@@ -96,14 +96,14 @@ export function Accordion({
                 onKeyDown={(e) => handleKeyDown(e, index)}
                 aria-expanded={isOpen}
                 aria-controls={panelId}
-                className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:rounded-xl"
+                className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:rounded-xl"
               >
-                <span className="text-base font-semibold text-navy-900">
+                <span className="text-base font-semibold text-ink">
                   {item.title}
                 </span>
                 <ChevronDown
                   className={cn(
-                    "h-5 w-5 shrink-0 text-navy-500 transition-transform duration-200",
+                    "h-5 w-5 shrink-0 text-ink-muted transition-transform duration-200",
                     isOpen && "rotate-180",
                   )}
                   aria-hidden="true"
@@ -120,7 +120,7 @@ export function Accordion({
               )}
             >
               <div className="overflow-hidden">
-                <p className="px-5 pb-5 text-sm leading-7 text-navy-700">
+                <p className="px-5 pb-5 text-sm leading-7 text-ink-light">
                   {item.content}
                 </p>
               </div>

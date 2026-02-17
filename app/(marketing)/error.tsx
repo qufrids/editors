@@ -18,16 +18,16 @@ export default function MarketingError({ error, reset }: ErrorPageProps) {
             <AlertTriangle className="h-8 w-8 text-red-500" />
           </div>
 
-          <h1 className="mt-6 font-display text-3xl font-semibold text-navy-900">
+          <h1 className="mt-6 font-display text-3xl font-semibold text-ink">
             Something Went Wrong
           </h1>
-          <p className="mt-3 text-base leading-7 text-navy-600">
+          <p className="mt-3 text-base leading-7 text-ink-light">
             We encountered an unexpected error while loading this page. Please try again, or
             contact our team if the problem persists.
           </p>
 
           {error.digest && (
-            <p className="mt-2 text-xs text-navy-400">
+            <p className="mt-2 text-xs text-ink-faint">
               Error reference: {error.digest}
             </p>
           )}
@@ -36,7 +36,7 @@ export default function MarketingError({ error, reset }: ErrorPageProps) {
             <button
               type="button"
               onClick={reset}
-              className="inline-flex h-11 items-center justify-center rounded-md bg-primary-600 px-6 text-sm font-semibold text-white transition-colors hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+              className="inline-flex h-11 items-center justify-center rounded-md bg-gold px-6 text-sm font-semibold text-ink transition-colors hover:bg-gold-500 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2"
             >
               Try Again
             </button>
@@ -45,12 +45,12 @@ export default function MarketingError({ error, reset }: ErrorPageProps) {
             </Button>
           </div>
 
-          <div className="mt-10 rounded-xl border border-navy-100 bg-navy-50 p-5">
-            <p className="text-sm text-navy-600">
+          <div className="mt-10 rounded-xl border border-ink/10 bg-cream p-5">
+            <p className="text-sm text-ink-light">
               Need help?{" "}
               <a
                 href="mailto:info@oxfordeditors.co.uk"
-                className="font-medium text-primary-700 hover:underline"
+                className="font-medium text-gold hover:underline"
               >
                 Email our support team
               </a>{" "}
@@ -59,7 +59,7 @@ export default function MarketingError({ error, reset }: ErrorPageProps) {
                 href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || ""}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-medium text-primary-700 hover:underline"
+                className="font-medium text-gold hover:underline"
               >
                 WhatsApp
               </a>

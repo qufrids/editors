@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { DM_Sans, Instrument_Serif } from "next/font/google";
 
 import { Analytics } from "@/components/Analytics";
 import { generateOrganizationSchema } from "@/lib/structured-data";
 
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const dmSans = DM_Sans({
+  variable: "--font-sans",
   subsets: ["latin"],
   display: "swap",
 });
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const instrumentSerif = Instrument_Serif({
   variable: "--font-display",
+  weight: "400",
   subsets: ["latin"],
   display: "swap",
 });
@@ -102,7 +103,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${plusJakartaSans.variable} font-sans antialiased`}
+        className={`${dmSans.variable} ${instrumentSerif.variable} font-sans antialiased`}
       >
         <a href="#main-content" className="skip-link">
           Skip to main content

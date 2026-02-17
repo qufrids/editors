@@ -37,7 +37,6 @@ export function BlogGrid({ posts, categories, initialCategory }: BlogGridProps) 
 
   return (
     <div>
-      {/* Category Filters */}
       <div role="group" aria-label="Blog categories" className="mb-8 flex flex-wrap gap-2">
         {["All", ...categories].map((category) => (
           <button
@@ -48,8 +47,8 @@ export function BlogGrid({ posts, categories, initialCategory }: BlogGridProps) 
             className={cn(
               "rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200",
               activeCategory === category
-                ? "bg-primary-600 text-white"
-                : "bg-navy-50 text-navy-700 hover:bg-navy-100",
+                ? "bg-gold text-ink"
+                : "bg-cream text-ink-light hover:bg-cream-200",
             )}
           >
             {category}
@@ -57,7 +56,6 @@ export function BlogGrid({ posts, categories, initialCategory }: BlogGridProps) 
         ))}
       </div>
 
-      {/* Grid */}
       {paginated.length > 0 ? (
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {paginated.map((post) => (
@@ -65,12 +63,11 @@ export function BlogGrid({ posts, categories, initialCategory }: BlogGridProps) 
           ))}
         </div>
       ) : (
-        <p className="py-12 text-center text-navy-500">
+        <p className="py-12 text-center text-ink-muted">
           No posts found in this category.
         </p>
       )}
 
-      {/* Pagination */}
       {totalPages > 1 && (
         <nav
           aria-label="Blog pagination"
@@ -80,7 +77,7 @@ export function BlogGrid({ posts, categories, initialCategory }: BlogGridProps) 
             type="button"
             onClick={() => setPage((p) => Math.max(1, p - 1))}
             disabled={page === 1}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-navy-200 bg-white text-navy-700 transition-colors hover:bg-navy-50 disabled:cursor-not-allowed disabled:opacity-40"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-ink/10 bg-white text-ink-light transition-colors hover:bg-cream disabled:cursor-not-allowed disabled:opacity-40"
             aria-label="Previous page"
           >
             <ChevronLeft className="h-4 w-4" />
@@ -96,8 +93,8 @@ export function BlogGrid({ posts, categories, initialCategory }: BlogGridProps) 
               className={cn(
                 "inline-flex h-9 w-9 items-center justify-center rounded-md text-sm font-medium transition-colors",
                 p === page
-                  ? "bg-primary-600 text-white"
-                  : "border border-navy-200 bg-white text-navy-700 hover:bg-navy-50",
+                  ? "bg-gold text-ink"
+                  : "border border-ink/10 bg-white text-ink-light hover:bg-cream",
               )}
             >
               {p}
@@ -108,7 +105,7 @@ export function BlogGrid({ posts, categories, initialCategory }: BlogGridProps) 
             type="button"
             onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
             disabled={page === totalPages}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-navy-200 bg-white text-navy-700 transition-colors hover:bg-navy-50 disabled:cursor-not-allowed disabled:opacity-40"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-ink/10 bg-white text-ink-light transition-colors hover:bg-cream disabled:cursor-not-allowed disabled:opacity-40"
             aria-label="Next page"
           >
             <ChevronRight className="h-4 w-4" />

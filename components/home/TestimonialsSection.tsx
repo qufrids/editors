@@ -32,11 +32,11 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
   const goNext = () => setCurrentIndex((prev) => (prev + 1) % testimonials.length);
 
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="bg-white py-24">
       <div className="container">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary-600">Testimonials</p>
-          <h2 className="mt-4 font-display text-3xl font-bold text-navy-900 sm:text-4xl">
+          <p className="text-sm font-semibold uppercase tracking-widest text-gold">Testimonials</p>
+          <h2 className="mt-4 font-display text-3xl text-ink sm:text-4xl">
             What Our Students Say
           </h2>
         </div>
@@ -49,11 +49,11 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.35, ease: "easeOut" }}
-              className="rounded-2xl border border-navy-100 bg-navy-50/30 p-8 text-center md:p-12"
+              className="rounded-2xl border border-ink/10 bg-cream/50 p-8 text-center md:p-12"
             >
-              <Quote className="mx-auto h-10 w-10 text-primary-200" />
+              <Quote className="mx-auto h-10 w-10 text-gold/30" />
 
-              <p className="mt-6 text-lg leading-relaxed text-navy-700 md:text-xl md:leading-relaxed">
+              <p className="mt-6 text-lg leading-relaxed text-ink-light md:text-xl md:leading-relaxed">
                 &ldquo;{current.content}&rdquo;
               </p>
 
@@ -61,18 +61,18 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
                 {Array.from({ length: 5 }).map((_, index) => (
                   <Star
                     key={`${current.id}-star-${index}`}
-                    className={`h-5 w-5 ${index < Math.round(current.rating) ? "fill-amber-400 text-amber-400" : "text-navy-200"}`}
+                    className={`h-5 w-5 ${index < Math.round(current.rating) ? "fill-gold text-gold" : "text-ink/10"}`}
                   />
                 ))}
               </div>
 
               <div className="mt-6 flex flex-col items-center gap-3">
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary-600 font-display text-xl font-bold text-white">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gold font-display text-xl text-ink">
                   {initial}
                 </div>
                 <div>
-                  <p className="text-base font-bold text-navy-900">{current.name}</p>
-                  <p className="text-sm text-navy-500">{current.role}</p>
+                  <p className="text-base font-semibold text-ink">{current.name}</p>
+                  <p className="text-sm text-ink-muted">{current.role}</p>
                 </div>
               </div>
             </motion.article>
@@ -82,7 +82,7 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
             type="button"
             onClick={goPrev}
             aria-label="Previous testimonial"
-            className="absolute -left-4 top-1/2 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-xl border border-navy-200 bg-white text-navy-600 shadow-sm transition-colors hover:bg-navy-50 md:inline-flex lg:-left-14"
+            className="absolute -left-4 top-1/2 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-xl border border-ink/10 bg-white text-ink-light shadow-sm transition-colors hover:bg-cream hover:text-ink md:inline-flex lg:-left-14"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
@@ -90,7 +90,7 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
             type="button"
             onClick={goNext}
             aria-label="Next testimonial"
-            className="absolute -right-4 top-1/2 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-xl border border-navy-200 bg-white text-navy-600 shadow-sm transition-colors hover:bg-navy-50 md:inline-flex lg:-right-14"
+            className="absolute -right-4 top-1/2 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-xl border border-ink/10 bg-white text-ink-light shadow-sm transition-colors hover:bg-cream hover:text-ink md:inline-flex lg:-right-14"
           >
             <ChevronRight className="h-5 w-5" />
           </button>
@@ -104,7 +104,7 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
               aria-label={`Go to testimonial ${index + 1}`}
               onClick={() => setCurrentIndex(index)}
               className={`h-2.5 rounded-full transition-all duration-300 ${
-                index === currentIndex ? "w-8 bg-primary-600" : "w-2.5 bg-navy-200 hover:bg-navy-300"
+                index === currentIndex ? "w-8 bg-gold" : "w-2.5 bg-ink/10 hover:bg-ink/20"
               }`}
             />
           ))}

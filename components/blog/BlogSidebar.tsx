@@ -20,10 +20,9 @@ export function BlogSidebar({
 }: BlogSidebarProps) {
   return (
     <aside className="space-y-8">
-      {/* Newsletter */}
-      <div className="rounded-2xl bg-navy-900 p-6 text-white">
+      <div className="rounded-2xl bg-ink p-6 text-cream">
         <h3 className="font-display text-lg font-semibold">Stay Updated</h3>
-        <p className="mt-2 text-sm leading-6 text-navy-200">
+        <p className="mt-2 text-sm leading-6 text-ink-faint">
           Get the latest academic tips, guides, and resources delivered to your inbox.
         </p>
         <div className="mt-4">
@@ -31,9 +30,8 @@ export function BlogSidebar({
         </div>
       </div>
 
-      {/* Recent Posts */}
-      <div className="rounded-2xl border border-navy-100 bg-white p-6 shadow-sm">
-        <h3 className="font-display text-lg font-semibold text-navy-900">Recent Posts</h3>
+      <div className="rounded-2xl border border-ink/10 bg-white p-6 shadow-sm">
+        <h3 className="font-display text-lg font-semibold text-ink">Recent Posts</h3>
         <ul className="mt-4 space-y-4">
           {recentPosts
             .filter((post) => post.slug !== currentSlug)
@@ -44,10 +42,10 @@ export function BlogSidebar({
                   href={`/blog/${post.slug}`}
                   className="group block"
                 >
-                  <h4 className="line-clamp-2 text-sm font-semibold text-navy-900 transition-colors group-hover:text-primary-700">
+                  <h4 className="line-clamp-2 text-sm font-semibold text-ink transition-colors group-hover:text-gold">
                     {post.title}
                   </h4>
-                  <span className="mt-1 flex items-center gap-1 text-xs text-navy-500">
+                  <span className="mt-1 flex items-center gap-1 text-xs text-ink-muted">
                     <Calendar className="h-3 w-3" />
                     {formatDate(post.published_at)}
                   </span>
@@ -57,32 +55,30 @@ export function BlogSidebar({
         </ul>
       </div>
 
-      {/* Categories */}
-      <div className="rounded-2xl border border-navy-100 bg-white p-6 shadow-sm">
-        <h3 className="font-display text-lg font-semibold text-navy-900">Categories</h3>
+      <div className="rounded-2xl border border-ink/10 bg-white p-6 shadow-sm">
+        <h3 className="font-display text-lg font-semibold text-ink">Categories</h3>
         <ul className="mt-4 space-y-2">
           {categories.map((category) => (
             <li key={category}>
               <Link
                 href={`/blog?category=${encodeURIComponent(category)}`}
-                className="flex items-center justify-between text-sm text-navy-700 transition-colors hover:text-primary-700"
+                className="flex items-center justify-between text-sm text-ink-light transition-colors hover:text-gold"
               >
                 <span>{category}</span>
-                <span className="text-xs text-navy-400">&rarr;</span>
+                <span className="text-xs text-ink-faint">&rarr;</span>
               </Link>
             </li>
           ))}
         </ul>
       </div>
 
-      {/* Tags */}
-      <div className="rounded-2xl border border-navy-100 bg-white p-6 shadow-sm">
-        <h3 className="font-display text-lg font-semibold text-navy-900">Tags</h3>
+      <div className="rounded-2xl border border-ink/10 bg-white p-6 shadow-sm">
+        <h3 className="font-display text-lg font-semibold text-ink">Tags</h3>
         <div className="mt-4 flex flex-wrap gap-2">
           {tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full bg-navy-50 px-3 py-1 text-xs font-medium text-navy-600"
+              className="rounded-full bg-cream px-3 py-1 text-xs font-medium text-ink-light"
             >
               {tag}
             </span>

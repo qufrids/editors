@@ -25,15 +25,15 @@ export default function CoursesPage() {
 
   return (
     <>
-      <section className="bg-gradient-to-b from-primary-50 via-white to-white py-14 md:py-20">
+      <section className="bg-gradient-to-b from-cream-200 via-cream to-cream py-14 md:py-20">
         <div className="container">
-          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary-700">
+          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-gold">
             Explore Our Courses
           </p>
-          <h1 className="mt-3 max-w-3xl font-display text-4xl font-semibold leading-tight text-navy-900 md:text-5xl">
+          <h1 className="mt-3 max-w-3xl font-display text-4xl font-semibold leading-tight text-ink md:text-5xl">
             Academic Courses
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-navy-700">
+          <p className="mt-4 max-w-2xl text-lg text-ink-light">
             Expert-led academic support across a range of disciplines, tailored to UK university
             standards and assessment criteria.
           </p>

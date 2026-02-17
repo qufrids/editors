@@ -12,19 +12,19 @@ const helpfulLinks = [
 
 export default function NotFound() {
   return (
-    <section className="flex min-h-screen items-center bg-gradient-to-b from-primary-50 via-white to-white py-20">
+    <section className="flex min-h-screen items-center bg-gradient-to-b from-cream-200 via-cream to-cream py-20">
       <div className="container">
         <div className="mx-auto max-w-lg text-center">
-          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary-50">
-            <FileQuestion className="h-8 w-8 text-primary-600" />
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gold/10">
+            <FileQuestion className="h-8 w-8 text-gold" />
           </div>
 
-          <p className="mt-6 text-6xl font-bold text-navy-200">404</p>
+          <p className="mt-6 text-6xl font-bold text-ink/10">404</p>
 
-          <h1 className="mt-2 font-display text-3xl font-semibold text-navy-900">
+          <h1 className="mt-2 font-display text-3xl font-semibold text-ink">
             Page Not Found
           </h1>
-          <p className="mt-3 text-base leading-7 text-navy-600">
+          <p className="mt-3 text-base leading-7 text-ink-light">
             Sorry, the page you are looking for does not exist or may have been moved. Check the
             URL or use the links below to find what you need.
           </p>
@@ -39,7 +39,7 @@ export default function NotFound() {
           </div>
 
           <div className="mt-10">
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-navy-500">
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-ink-muted">
               Helpful Links
             </h2>
             <ul className="mt-4 grid gap-2 sm:grid-cols-2">
@@ -47,12 +47,12 @@ export default function NotFound() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="flex flex-col rounded-lg border border-navy-100 bg-white p-4 text-left transition-shadow hover:shadow-md"
+                    className="flex flex-col rounded-lg border border-ink/10 bg-white p-4 text-left transition-shadow hover:shadow-md"
                   >
-                    <span className="text-sm font-semibold text-navy-900">
+                    <span className="text-sm font-semibold text-ink">
                       {link.label}
                     </span>
-                    <span className="mt-0.5 text-xs text-navy-500">
+                    <span className="mt-0.5 text-xs text-ink-muted">
                       {link.description}
                     </span>
                   </a>

@@ -31,15 +31,15 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 
   return (
     <>
-      <section className="bg-gradient-to-b from-primary-50 via-white to-white py-14 md:py-20">
+      <section className="bg-gradient-to-b from-cream-200 via-cream to-cream py-14 md:py-20">
         <div className="container">
-          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary-700">
+          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-gold">
             Our Blog
           </p>
-          <h1 className="mt-3 max-w-3xl font-display text-4xl font-semibold leading-tight text-navy-900 md:text-5xl">
+          <h1 className="mt-3 max-w-3xl font-display text-4xl font-semibold leading-tight text-ink md:text-5xl">
             Academic Insights &amp; Guides
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-navy-700">
+          <p className="mt-4 max-w-2xl text-lg text-ink-light">
             Practical tips, study strategies, and expert advice to help you succeed in your academic
             journey.
           </p>

@@ -106,15 +106,15 @@ const faqCategories = [
 export default function FaqsPage() {
   return (
     <>
-      <section className="bg-gradient-to-b from-primary-50 via-white to-white py-14 md:py-20">
+      <section className="bg-gradient-to-b from-cream-200 via-cream to-cream py-14 md:py-20">
         <div className="container">
-          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary-700">
+          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-gold">
             Support
           </p>
-          <h1 className="mt-3 font-display text-4xl font-semibold text-navy-900 md:text-5xl">
+          <h1 className="mt-3 font-display text-4xl font-semibold text-ink md:text-5xl">
             Frequently Asked Questions
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-navy-700">
+          <p className="mt-4 max-w-2xl text-lg text-ink-light">
             Find answers to common questions about our services, pricing, delivery, and revision
             policies. Can&apos;t find what you&apos;re looking for? Get in touch with our team.
           </p>
@@ -128,13 +128,13 @@ export default function FaqsPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-primary-50/40 py-14 md:py-20">
+      <section className="bg-cream-200/50 py-14 md:py-20">
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="font-display text-2xl font-semibold text-navy-900 md:text-3xl">
+            <h2 className="font-display text-2xl font-semibold text-ink md:text-3xl">
               Still Have Questions?
             </h2>
-            <p className="mt-3 text-base text-navy-700">
+            <p className="mt-3 text-base text-ink-light">
               Our team is happy to help. Reach out and we&apos;ll get back to you within 24 hours.
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">

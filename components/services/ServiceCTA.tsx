@@ -18,15 +18,15 @@ export function ServiceCTA() {
     : undefined;
 
   return (
-    <section className="bg-navy-900 py-14 text-white md:py-20">
+    <section className="bg-ink py-14 text-cream md:py-20">
       <div className="container">
         <div className="grid gap-8 rounded-2xl border border-white/15 bg-white/5 p-8 md:p-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary-200">Need Reliable Support?</p>
-            <h2 className="mt-3 font-display text-3xl font-semibold leading-tight md:text-4xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-gold-200">Need Reliable Support?</p>
+            <h2 className="mt-3 font-display text-3xl leading-tight md:text-4xl">
               Get Academic Essays that Impress Every Time
             </h2>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-navy-100">
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-ink-faint">
               Let our specialists help you produce high-quality, assessment-ready work with clear structure, critical
               depth, and polished academic presentation.
             </p>
@@ -57,8 +57,8 @@ export function ServiceCTA() {
             <h3 className="text-xl font-semibold">Why Choose Oxford Editors</h3>
             <ul className="mt-4 space-y-3">
               {benefits.map((item) => (
-                <li key={item} className="flex items-start gap-2 text-sm text-navy-100">
-                  <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary-300" />
+                <li key={item} className="flex items-start gap-2 text-sm text-ink-faint">
+                  <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                   <span>{item}</span>
                 </li>
               ))}

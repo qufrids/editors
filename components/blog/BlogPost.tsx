@@ -28,8 +28,7 @@ export function BlogPost({ post }: BlogPostProps) {
 
   return (
     <article>
-      {/* Featured Image */}
-      <div className="relative aspect-[21/9] overflow-hidden rounded-2xl bg-navy-100">
+      <div className="relative aspect-[21/9] overflow-hidden rounded-2xl bg-cream-200">
         <Image
           src={post.featured_image}
           alt={post.title}
@@ -40,28 +39,25 @@ export function BlogPost({ post }: BlogPostProps) {
         />
       </div>
 
-      {/* Meta */}
       <div className="mt-6 flex flex-wrap items-center gap-3">
         <Link
           href={`/blog?category=${encodeURIComponent(post.category)}`}
-          className="rounded-full bg-primary-100 px-3 py-1 text-xs font-semibold text-primary-700 transition-colors hover:bg-primary-200"
+          className="rounded-full bg-gold/10 px-3 py-1 text-xs font-semibold text-gold-700 transition-colors hover:bg-gold/20"
         >
           {post.category}
         </Link>
-        <span className="flex items-center gap-1 text-sm text-navy-500">
+        <span className="flex items-center gap-1 text-sm text-ink-muted">
           <Calendar className="h-3.5 w-3.5" />
           {formatDate(post.published_at)}
         </span>
       </div>
 
-      {/* Title */}
-      <h1 className="mt-4 font-display text-3xl font-semibold leading-tight text-navy-900 md:text-4xl">
+      <h1 className="mt-4 font-display text-3xl leading-tight text-ink md:text-4xl">
         {post.title}
       </h1>
 
-      {/* Author */}
-      <div className="mt-5 flex items-center gap-3 border-b border-navy-100 pb-6">
-        <div className="relative h-10 w-10 overflow-hidden rounded-full bg-primary-100">
+      <div className="mt-5 flex items-center gap-3 border-b border-ink/10 pb-6">
+        <div className="relative h-10 w-10 overflow-hidden rounded-full bg-gold/10">
           <Image
             src={post.author_image}
             alt={post.author}
@@ -71,33 +67,31 @@ export function BlogPost({ post }: BlogPostProps) {
           />
         </div>
         <div>
-          <p className="text-sm font-semibold text-navy-900">{post.author}</p>
-          <p className="text-xs text-navy-500">Oxford Editors</p>
+          <p className="text-sm font-semibold text-ink">{post.author}</p>
+          <p className="text-xs text-ink-muted">Oxford Editors</p>
         </div>
       </div>
 
-      {/* Content */}
       <div
         className={cn(
-          "prose prose-navy mt-8 max-w-none",
-          "prose-headings:font-display prose-headings:font-semibold prose-headings:text-navy-900",
+          "prose mt-8 max-w-none",
+          "prose-headings:font-display prose-headings:font-semibold prose-headings:text-ink",
           "prose-h2:mt-10 prose-h2:text-2xl",
-          "prose-p:leading-8 prose-p:text-navy-700",
-          "prose-li:text-navy-700 prose-li:leading-7",
-          "prose-strong:text-navy-900",
-          "prose-a:text-primary-700 prose-a:no-underline hover:prose-a:underline",
+          "prose-p:leading-8 prose-p:text-ink-light",
+          "prose-li:text-ink-light prose-li:leading-7",
+          "prose-strong:text-ink",
+          "prose-a:text-gold prose-a:no-underline hover:prose-a:underline",
         )}
         dangerouslySetInnerHTML={{ __html: markdownToHtml(post.content) }}
       />
 
-      {/* Tags */}
       {post.tags.length > 0 && (
-        <div className="mt-10 flex flex-wrap items-center gap-2 border-t border-navy-100 pt-6">
-          <Tag className="h-4 w-4 text-navy-400" />
+        <div className="mt-10 flex flex-wrap items-center gap-2 border-t border-ink/10 pt-6">
+          <Tag className="h-4 w-4 text-ink-faint" />
           {post.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full bg-navy-50 px-3 py-1 text-xs font-medium text-navy-600"
+              className="rounded-full bg-cream px-3 py-1 text-xs font-medium text-ink-light"
             >
               {tag}
             </span>
@@ -105,14 +99,13 @@ export function BlogPost({ post }: BlogPostProps) {
         </div>
       )}
 
-      {/* Share */}
-      <div className="mt-6 flex flex-wrap items-center gap-2 border-t border-navy-100 pt-6">
-        <span className="text-sm font-medium text-navy-700">Share:</span>
+      <div className="mt-6 flex flex-wrap items-center gap-2 border-t border-ink/10 pt-6">
+        <span className="text-sm font-medium text-ink-light">Share:</span>
         <a
           href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-navy-50 text-navy-600 transition-colors hover:bg-navy-100"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-cream text-ink-light transition-colors hover:bg-cream-200"
           aria-label="Share on Twitter"
         >
           <Twitter className="h-4 w-4" />
@@ -121,7 +114,7 @@ export function BlogPost({ post }: BlogPostProps) {
           href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-navy-50 text-navy-600 transition-colors hover:bg-navy-100"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-cream text-ink-light transition-colors hover:bg-cream-200"
           aria-label="Share on Facebook"
         >
           <Facebook className="h-4 w-4" />
@@ -130,7 +123,7 @@ export function BlogPost({ post }: BlogPostProps) {
           href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-navy-50 text-navy-600 transition-colors hover:bg-navy-100"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-cream text-ink-light transition-colors hover:bg-cream-200"
           aria-label="Share on LinkedIn"
         >
           <Linkedin className="h-4 w-4" />
@@ -138,7 +131,7 @@ export function BlogPost({ post }: BlogPostProps) {
         <button
           type="button"
           onClick={handleCopyLink}
-          className="inline-flex h-9 items-center gap-1.5 rounded-lg bg-navy-50 px-3 text-xs font-medium text-navy-600 transition-colors hover:bg-navy-100"
+          className="inline-flex h-9 items-center gap-1.5 rounded-lg bg-cream px-3 text-xs font-medium text-ink-light transition-colors hover:bg-cream-200"
         >
           <LinkIcon className="h-3.5 w-3.5" />
           {copied ? "Copied!" : "Copy link"}
@@ -148,10 +141,6 @@ export function BlogPost({ post }: BlogPostProps) {
   );
 }
 
-/**
- * Minimal markdown-to-HTML converter for blog content.
- * Handles headings, bold, italic, links, unordered lists, and paragraphs.
- */
 function markdownToHtml(md: string): string {
   const lines = md.split("\n");
   const html: string[] = [];
@@ -160,7 +149,6 @@ function markdownToHtml(md: string): string {
   for (const raw of lines) {
     const line = raw.trimEnd();
 
-    // Blank line — close list if open, skip
     if (line.trim() === "") {
       if (inList) {
         html.push("</ul>");
@@ -169,7 +157,6 @@ function markdownToHtml(md: string): string {
       continue;
     }
 
-    // Headings
     const headingMatch = line.match(/^(#{1,6})\s+(.*)/);
     if (headingMatch) {
       if (inList) {
@@ -181,7 +168,6 @@ function markdownToHtml(md: string): string {
       continue;
     }
 
-    // List items
     const listMatch = line.match(/^[-*]\s+(.*)/);
     if (listMatch) {
       if (!inList) {
@@ -192,7 +178,6 @@ function markdownToHtml(md: string): string {
       continue;
     }
 
-    // Paragraph
     if (inList) {
       html.push("</ul>");
       inList = false;
@@ -208,13 +193,9 @@ function markdownToHtml(md: string): string {
 function inlineFormat(text: string): string {
   return (
     text
-      // Bold + italic
       .replace(/\*\*\*(.*?)\*\*\*/g, "<strong><em>$1</em></strong>")
-      // Bold
       .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
-      // Italic
       .replace(/\*(.*?)\*/g, "<em>$1</em>")
-      // Links
       .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
   );
 }

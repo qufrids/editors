@@ -17,6 +17,8 @@ html {
    Base Styles
    --------------------------------------------------------------------------- */
 body {
+  background-color: #f8f5f0;
+  color: #0f1923;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -26,12 +28,11 @@ body {
    Focus-Visible Accessibility
    --------------------------------------------------------------------------- */
 *:focus-visible {
-  outline: 2px solid #0284c7;
+  outline: 2px solid #c9a84c;
   outline-offset: 2px;
   border-radius: 4px;
 }
 
-/* Remove focus ring for mouse/touch users */
 *:focus:not(:focus-visible) {
   outline: none;
 }
@@ -40,8 +41,8 @@ body {
    Selection
    --------------------------------------------------------------------------- */
 ::selection {
-  background-color: #bae6fd;
-  color: #0c4a6e;
+  background-color: #f2dfa5;
+  color: #0f1923;
 }
 
 /* ---------------------------------------------------------------------------
@@ -56,12 +57,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #cbd5e1;
+  background-color: #c9d1d9;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #94a3b8;
+  background-color: #a3b0bd;
 }
 
 /* ---------------------------------------------------------------------------
@@ -73,8 +74,8 @@ body {
   left: 1rem;
   z-index: 100;
   padding: 0.75rem 1.25rem;
-  background: #0f172a;
-  color: #fff;
+  background: #0f1923;
+  color: #f8f5f0;
   font-size: 0.875rem;
   font-weight: 600;
   border-radius: 0.5rem;

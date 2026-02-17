@@ -39,18 +39,18 @@ export function MobileMenu({ isOpen, onClose, services, courses }: MobileMenuPro
           />
 
           <motion.aside
-            className="absolute right-0 top-0 h-full w-full max-w-sm overflow-y-auto bg-navy-900 text-white shadow-2xl"
+            className="absolute right-0 top-0 h-full w-full max-w-sm overflow-y-auto bg-ink text-cream shadow-2xl"
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.3, ease: "easeOut" }}
           >
             <div className="flex items-center justify-between border-b border-white/15 px-5 py-4">
-              <span className="font-display text-xl font-semibold">Oxford Editors</span>
+              <span className="font-display text-xl">Oxford Editors</span>
               <button
                 type="button"
                 onClick={onClose}
-                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/20 text-white transition-colors hover:bg-white/10"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/20 text-cream transition-colors hover:bg-white/10"
                 aria-label="Close menu"
               >
                 <X className="h-5 w-5" />
@@ -99,7 +99,7 @@ export function MobileMenu({ isOpen, onClose, services, courses }: MobileMenuPro
                           <Link
                             key={service.id}
                             href={`/services/${service.slug}`}
-                            className="block rounded-md px-2 py-1.5 text-sm text-white/90 hover:bg-white/10 hover:text-white"
+                            className="block rounded-md px-2 py-1.5 text-sm text-cream/80 hover:bg-white/10 hover:text-cream"
                             onClick={onClose}
                           >
                             {service.title}
@@ -140,7 +140,7 @@ export function MobileMenu({ isOpen, onClose, services, courses }: MobileMenuPro
                           <Link
                             key={course.id}
                             href={`/courses/${course.slug}`}
-                            className="block rounded-md px-2 py-1.5 text-sm text-white/90 hover:bg-white/10 hover:text-white"
+                            className="block rounded-md px-2 py-1.5 text-sm text-cream/80 hover:bg-white/10 hover:text-cream"
                             onClick={onClose}
                           >
                             {course.title}

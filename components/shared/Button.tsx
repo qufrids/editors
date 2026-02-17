@@ -10,13 +10,13 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-primary-600 text-white shadow-sm hover:bg-primary-700 active:bg-primary-800 focus-visible:ring-primary-500",
+          "bg-gold text-ink shadow-sm hover:bg-gold-500 active:bg-gold-600 focus-visible:ring-gold-400",
         secondary:
-          "bg-navy-900 text-white shadow-sm hover:bg-navy-800 active:bg-navy-950 focus-visible:ring-navy-500",
+          "bg-ink text-cream shadow-sm hover:bg-ink/80 active:bg-ink/90 focus-visible:ring-gold",
         outline:
-          "border-2 border-primary-600 bg-white text-primary-600 hover:bg-primary-50 active:bg-primary-100 focus-visible:ring-primary-500",
+          "border-2 border-ink/15 bg-white text-ink hover:bg-cream-200 active:bg-cream-300 focus-visible:ring-gold-400",
         ghost:
-          "bg-transparent text-navy-700 hover:bg-navy-100 active:bg-navy-200 focus-visible:ring-navy-400",
+          "bg-transparent text-ink-light hover:bg-ink/5 active:bg-ink/10 focus-visible:ring-gold-400",
       },
       size: {
         sm: "h-9 px-4 text-sm",

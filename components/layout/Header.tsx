@@ -43,8 +43,8 @@ export function Header() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 border-b transition-all duration-300",
         isScrolled
-          ? "border-navy-200 bg-white/95 shadow-sm backdrop-blur"
-          : "border-transparent bg-white/70",
+          ? "border-ink/10 bg-cream/95 shadow-sm backdrop-blur"
+          : "border-transparent bg-cream/70",
       )}
     >
       <div className="container flex h-20 items-center justify-between">
@@ -58,13 +58,13 @@ export function Header() {
             priority
           />
           <div className="leading-tight">
-            <span className="block font-display text-lg font-semibold text-navy-900">Oxford Editors</span>
-            <span className="block text-xs text-navy-600">Academic Services</span>
+            <span className="block font-display text-xl text-ink">Oxford Editors</span>
+            <span className="block text-xs text-ink-muted">Academic Services</span>
           </div>
         </Link>
 
         <nav aria-label="Main" className="hidden items-center gap-8 md:flex">
-          <Link href="/about-us" className="text-sm font-medium text-navy-700 transition-colors hover:text-primary-600">
+          <Link href="/about-us" className="text-sm font-medium text-ink-light transition-colors hover:text-gold">
             About Us
           </Link>
 
@@ -72,18 +72,18 @@ export function Header() {
             <button
               type="button"
               aria-haspopup="true"
-              className="flex items-center gap-1 text-sm font-medium text-navy-700 transition-colors hover:text-primary-600"
+              className="flex items-center gap-1 text-sm font-medium text-ink-light transition-colors hover:text-gold"
             >
               Services
               <ChevronDown className="h-4 w-4" />
             </button>
-            <div className="invisible absolute left-0 top-full mt-3 w-[340px] rounded-lg border border-navy-100 bg-white p-2 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:opacity-100">
+            <div className="invisible absolute left-0 top-full mt-3 w-[340px] rounded-xl border border-ink/10 bg-white p-2 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:opacity-100">
               <div className="max-h-[420px] space-y-1 overflow-auto pr-1">
                 {services.map((service) => (
                   <Link
                     key={service.id}
                     href={`/services/${service.slug}`}
-                    className="block rounded-md px-3 py-2 text-sm text-navy-700 transition-colors hover:bg-primary-50 hover:text-primary-700"
+                    className="block rounded-lg px-3 py-2.5 text-sm text-ink-light transition-colors hover:bg-cream hover:text-ink"
                   >
                     {service.title}
                   </Link>
@@ -96,18 +96,18 @@ export function Header() {
             <button
               type="button"
               aria-haspopup="true"
-              className="flex items-center gap-1 text-sm font-medium text-navy-700 transition-colors hover:text-primary-600"
+              className="flex items-center gap-1 text-sm font-medium text-ink-light transition-colors hover:text-gold"
             >
               Courses
               <ChevronDown className="h-4 w-4" />
             </button>
-            <div className="invisible absolute left-0 top-full mt-3 w-[340px] rounded-lg border border-navy-100 bg-white p-2 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:opacity-100">
+            <div className="invisible absolute left-0 top-full mt-3 w-[340px] rounded-xl border border-ink/10 bg-white p-2 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:opacity-100">
               <div className="max-h-[420px] space-y-1 overflow-auto pr-1">
                 {courses.map((course) => (
                   <Link
                     key={course.id}
                     href={`/courses/${course.slug}`}
-                    className="block rounded-md px-3 py-2 text-sm text-navy-700 transition-colors hover:bg-primary-50 hover:text-primary-700"
+                    className="block rounded-lg px-3 py-2.5 text-sm text-ink-light transition-colors hover:bg-cream hover:text-ink"
                   >
                     {course.title}
                   </Link>
@@ -116,11 +116,11 @@ export function Header() {
             </div>
           </div>
 
-          <Link href="/blog" className="text-sm font-medium text-navy-700 transition-colors hover:text-primary-600">
+          <Link href="/blog" className="text-sm font-medium text-ink-light transition-colors hover:text-gold">
             Blog
           </Link>
 
-          <Link href="/contact-us" className="text-sm font-medium text-navy-700 transition-colors hover:text-primary-600">
+          <Link href="/contact-us" className="text-sm font-medium text-ink-light transition-colors hover:text-gold">
             Contact Us
           </Link>
         </nav>
@@ -134,7 +134,7 @@ export function Header() {
         <button
           type="button"
           onClick={() => setMobileMenuOpen((prev) => !prev)}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-navy-200 text-navy-800 transition-colors hover:bg-navy-50 md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-ink/10 text-ink transition-colors hover:bg-cream-200 md:hidden"
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileMenuOpen}
         >
@@ -144,31 +144,31 @@ export function Header() {
 
       <div
         className={cn(
-          "border-t border-navy-100 bg-white transition-all duration-300 md:hidden",
+          "border-t border-ink/10 bg-white transition-all duration-300 md:hidden",
           mobileMenuOpen ? "max-h-[85vh] opacity-100" : "max-h-0 overflow-hidden opacity-0",
         )}
       >
         <div className="container space-y-6 py-5">
           <div className="space-y-3">
-            <Link href="/about-us" className="block text-sm font-medium text-navy-800" onClick={() => setMobileMenuOpen(false)}>
+            <Link href="/about-us" className="block text-sm font-medium text-ink" onClick={() => setMobileMenuOpen(false)}>
               About Us
             </Link>
-            <Link href="/blog" className="block text-sm font-medium text-navy-800" onClick={() => setMobileMenuOpen(false)}>
+            <Link href="/blog" className="block text-sm font-medium text-ink" onClick={() => setMobileMenuOpen(false)}>
               Blog
             </Link>
-            <Link href="/contact-us" className="block text-sm font-medium text-navy-800" onClick={() => setMobileMenuOpen(false)}>
+            <Link href="/contact-us" className="block text-sm font-medium text-ink" onClick={() => setMobileMenuOpen(false)}>
               Contact Us
             </Link>
           </div>
 
           <div>
-            <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-navy-500">Services</p>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-ink-muted">Services</p>
             <div className="max-h-44 space-y-1 overflow-auto pr-1">
               {services.map((service) => (
                 <Link
                   key={service.id}
                   href={`/services/${service.slug}`}
-                  className="block rounded-md px-2 py-1.5 text-sm text-navy-700 hover:bg-primary-50"
+                  className="block rounded-lg px-2 py-1.5 text-sm text-ink-light hover:bg-cream"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {service.title}
@@ -178,13 +178,13 @@ export function Header() {
           </div>
 
           <div>
-            <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-navy-500">Courses</p>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-ink-muted">Courses</p>
             <div className="max-h-44 space-y-1 overflow-auto pr-1">
               {courses.map((course) => (
                 <Link
                   key={course.id}
                   href={`/courses/${course.slug}`}
-                  className="block rounded-md px-2 py-1.5 text-sm text-navy-700 hover:bg-primary-50"
+                  className="block rounded-lg px-2 py-1.5 text-sm text-ink-light hover:bg-cream"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {course.title}

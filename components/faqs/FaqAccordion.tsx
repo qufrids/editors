@@ -27,7 +27,6 @@ export function FaqAccordion({ categories }: FaqAccordionProps) {
 
   return (
     <div>
-      {/* Category Tabs */}
       <div role="group" aria-label="FAQ categories" className="mb-8 flex flex-wrap gap-2">
         {categories.map((category) => (
           <button
@@ -41,8 +40,8 @@ export function FaqAccordion({ categories }: FaqAccordionProps) {
             className={cn(
               "rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200",
               activeCategory === category.name
-                ? "bg-primary-600 text-white"
-                : "bg-navy-50 text-navy-700 hover:bg-navy-100",
+                ? "bg-gold text-ink"
+                : "bg-cream text-ink-light hover:bg-cream-200",
             )}
           >
             {category.name}
@@ -50,7 +49,6 @@ export function FaqAccordion({ categories }: FaqAccordionProps) {
         ))}
       </div>
 
-      {/* Questions */}
       {currentCategory && (
         <div className="space-y-3">
           {currentCategory.items.map((item, index) => {
@@ -61,7 +59,7 @@ export function FaqAccordion({ categories }: FaqAccordionProps) {
             return (
               <div
                 key={item.question}
-                className="rounded-xl border border-navy-100 bg-white shadow-sm"
+                className="rounded-xl border border-ink/10 bg-white shadow-sm"
               >
                 <button
                   id={triggerId}
@@ -71,12 +69,12 @@ export function FaqAccordion({ categories }: FaqAccordionProps) {
                   aria-controls={panelId}
                   className="flex w-full items-start justify-between gap-4 px-5 py-4 text-left"
                 >
-                  <h3 className="text-base font-semibold text-navy-900">
+                  <h3 className="text-base font-semibold text-ink">
                     {item.question}
                   </h3>
                   <ChevronDown
                     className={cn(
-                      "mt-0.5 h-5 w-5 shrink-0 text-navy-500 transition-transform duration-200",
+                      "mt-0.5 h-5 w-5 shrink-0 text-ink-muted transition-transform duration-200",
                       isOpen && "rotate-180",
                     )}
                   />
@@ -91,7 +89,7 @@ export function FaqAccordion({ categories }: FaqAccordionProps) {
                   )}
                 >
                   <div className="overflow-hidden">
-                    <p className="px-5 pb-5 text-sm leading-7 text-navy-700">
+                    <p className="px-5 pb-5 text-sm leading-7 text-ink-light">
                       {item.answer}
                     </p>
                   </div>

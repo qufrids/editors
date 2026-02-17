@@ -62,23 +62,23 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   return (
     <>
       {/* Breadcrumbs */}
-      <section className="bg-gradient-to-b from-primary-50 via-white to-white pb-0 pt-14 md:pt-20">
+      <section className="bg-gradient-to-b from-cream-200 via-cream to-cream pb-0 pt-14 md:pt-20">
         <div className="container">
-          <nav aria-label="Breadcrumb" className="text-sm text-navy-600">
+          <nav aria-label="Breadcrumb" className="text-sm text-ink-light">
             <ol className="flex flex-wrap items-center gap-2">
               <li>
-                <Link href="/" className="hover:text-primary-700">
+                <Link href="/" className="hover:text-gold">
                   Home
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
               <li>
-                <Link href="/blog" className="hover:text-primary-700">
+                <Link href="/blog" className="hover:text-gold">
                   Blog
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
-              <li className="font-medium text-navy-900 line-clamp-1">
+              <li className="font-medium text-ink line-clamp-1">
                 {post.title}
               </li>
             </ol>
@@ -103,9 +103,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Related Posts */}
       {relatedPosts.length > 0 && (
-        <section className="border-t border-navy-100 bg-primary-50/40 py-14 md:py-20">
+        <section className="border-t border-ink/10 bg-cream-200/50 py-14 md:py-20">
           <div className="container">
-            <h2 className="font-display text-2xl font-semibold text-navy-900 md:text-3xl">
+            <h2 className="font-display text-2xl font-semibold text-ink md:text-3xl">
               Related Articles
             </h2>
             <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

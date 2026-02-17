@@ -41,35 +41,32 @@ export function StarRating({
   return (
     <div className={cn("flex items-center gap-1", className)}>
       <div className="flex gap-0.5">
-        {/* Full stars */}
         {Array.from({ length: fullStars }, (_, i) => (
           <Star
             key={`full-${i}`}
-            className={cn(iconClass, "fill-amber-400 text-amber-400")}
+            className={cn(iconClass, "fill-gold text-gold")}
           />
         ))}
 
-        {/* Half star */}
         {hasHalf && (
           <div className="relative">
-            <Star className={cn(iconClass, "fill-gray-200 text-gray-200")} />
+            <Star className={cn(iconClass, "fill-ink/10 text-ink/10")} />
             <div className="absolute inset-0 overflow-hidden" style={{ width: "50%" }}>
-              <Star className={cn(iconClass, "fill-amber-400 text-amber-400")} />
+              <Star className={cn(iconClass, "fill-gold text-gold")} />
             </div>
           </div>
         )}
 
-        {/* Empty stars */}
         {Array.from({ length: emptyStars }, (_, i) => (
           <Star
             key={`empty-${i}`}
-            className={cn(iconClass, "fill-gray-200 text-gray-200")}
+            className={cn(iconClass, "fill-ink/10 text-ink/10")}
           />
         ))}
       </div>
 
       {showValue && (
-        <span className={cn("font-bold text-navy-900", valueSizeClasses[size])}>
+        <span className={cn("font-bold text-ink", valueSizeClasses[size])}>
           {rating.toFixed(1)}
         </span>
       )}

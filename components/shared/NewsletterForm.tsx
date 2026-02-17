@@ -65,7 +65,7 @@ export function NewsletterForm() {
             disabled={isSubmitting}
             aria-invalid={errors.email ? "true" : "false"}
             className={cn(
-              "h-11 w-full rounded-md border bg-white px-3 text-sm text-navy-900 placeholder:text-navy-500 focus:outline-none focus:ring-2 focus:ring-primary-500 disabled:cursor-not-allowed disabled:opacity-70",
+              "h-11 w-full rounded-md border bg-white px-3 text-sm text-ink placeholder:text-ink-muted focus:outline-none focus:ring-2 focus:ring-gold disabled:cursor-not-allowed disabled:opacity-70",
               errors.email ? "border-red-400 focus:ring-red-400" : "border-white/70",
             )}
             {...register("email")}
@@ -75,7 +75,7 @@ export function NewsletterForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="h-11 shrink-0 rounded-md bg-primary-600 px-4 text-sm font-medium text-white transition-colors hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 focus:ring-offset-navy-900 disabled:cursor-not-allowed disabled:opacity-70"
+          className="h-11 shrink-0 rounded-md bg-gold px-4 text-sm font-medium text-ink transition-colors hover:bg-gold-500 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-ink disabled:cursor-not-allowed disabled:opacity-70"
         >
           {isSubmitting ? "Submitting..." : "Subscribe"}
         </button>

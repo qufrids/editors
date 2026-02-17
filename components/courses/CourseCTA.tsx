@@ -25,18 +25,17 @@ export function CourseCTA() {
     : undefined;
 
   return (
-    <section className="bg-navy-900 py-14 text-white md:py-20">
+    <section className="bg-ink py-14 text-cream md:py-20">
       <div className="container">
         <div className="grid gap-8 rounded-2xl border border-white/15 bg-white/5 p-8 md:p-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
-          {/* Left: CTA Content */}
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary-200">
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-gold-200">
               Ready to Get Started?
             </p>
-            <h2 className="mt-3 font-display text-3xl font-semibold leading-tight md:text-4xl">
+            <h2 className="mt-3 font-display text-3xl leading-tight md:text-4xl">
               Submit with Confidence
             </h2>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-navy-100">
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-ink-faint">
               Get the academic support you need to produce high-quality, assessment-ready
               coursework. Our experts are here to help you achieve the grades you deserve.
             </p>
@@ -62,23 +61,21 @@ export function CourseCTA() {
               </a>
             </div>
 
-            {/* Trust Indicators */}
             <div className="mt-8 flex flex-wrap gap-6">
               {trustIndicators.map((item) => (
                 <div key={item.description} className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10">
-                    <item.icon className="h-5 w-5 text-primary-300" />
+                    <item.icon className="h-5 w-5 text-gold" />
                   </div>
                   <div>
                     <p className="text-lg font-bold">{item.label}</p>
-                    <p className="text-xs text-navy-300">{item.description}</p>
+                    <p className="text-xs text-ink-faint">{item.description}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Right: Trust Reasons */}
           <div>
             <h3 className="text-xl font-semibold">
               Why Students Trust Oxford Editors
@@ -87,9 +84,9 @@ export function CourseCTA() {
               {trustReasons.map((reason) => (
                 <li
                   key={reason}
-                  className="flex items-start gap-2 text-sm text-navy-100"
+                  className="flex items-start gap-2 text-sm text-ink-faint"
                 >
-                  <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary-300" />
+                  <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                   <span>{reason}</span>
                 </li>
               ))}

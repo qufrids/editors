@@ -98,15 +98,15 @@ export default function AboutUsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-b from-primary-50 via-white to-white py-14 md:py-20">
+      <section className="bg-gradient-to-b from-cream-200 via-cream to-cream py-14 md:py-20">
         <div className="container">
-          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary-700">
+          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-gold">
             Who We Are
           </p>
-          <h1 className="mt-3 max-w-4xl font-display text-4xl font-semibold leading-tight text-navy-900 md:text-5xl">
+          <h1 className="mt-3 max-w-4xl font-display text-4xl font-semibold leading-tight text-ink md:text-5xl">
             About Oxford Editors
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-navy-700">
+          <p className="mt-4 max-w-2xl text-lg text-ink-light">
             We partner with students across the UK to deliver expert academic support that is
             structured, reliable, and aligned with university standards.
           </p>
@@ -118,35 +118,35 @@ export default function AboutUsPage() {
         <div className="container">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary-700">
+              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-gold">
                 Our Mission
               </p>
-              <h2 className="mt-3 font-display text-3xl font-semibold leading-tight text-navy-900 md:text-4xl">
+              <h2 className="mt-3 font-display text-3xl font-semibold leading-tight text-ink md:text-4xl">
                 Empowering Students to Achieve Academic Excellence
               </h2>
-              <p className="mt-5 text-base leading-8 text-navy-700">
+              <p className="mt-5 text-base leading-8 text-ink-light">
                 Oxford Editors was founded on a simple belief: every student deserves access to
                 high-quality academic support. Whether you are navigating your first essay or
                 completing a doctoral thesis, the quality of guidance you receive can shape your
                 confidence, your grades, and your future.
               </p>
-              <p className="mt-4 text-base leading-8 text-navy-700">
+              <p className="mt-4 text-base leading-8 text-ink-light">
                 We bring together experienced academics, subject specialists, and professional
                 editors who understand the demands of UK higher education. Our team works closely
                 with students to provide personalised, assessment-focused support that respects
                 academic integrity while helping you produce your best work.
               </p>
-              <p className="mt-4 text-base leading-8 text-navy-700">
+              <p className="mt-4 text-base leading-8 text-ink-light">
                 From coursework and dissertations to exam preparation and research proposals, we
                 are here to help you succeed at every stage of your academic journey.
               </p>
             </div>
 
-            <div className="relative min-h-[340px] rounded-2xl border border-primary-100 bg-gradient-to-br from-primary-50 via-white to-primary-100/50 p-8 shadow-sm">
-              <div className="absolute right-8 top-8 h-16 w-16 rounded-full bg-primary-200/70" />
-              <div className="absolute bottom-10 left-10 h-24 w-24 rounded-full bg-primary-100" />
-              <div className="relative flex h-full min-h-[260px] items-center justify-center rounded-xl border border-dashed border-primary-200 bg-white/70 text-center">
-                <p className="max-w-[280px] text-sm font-medium text-primary-700">
+            <div className="relative min-h-[340px] rounded-2xl border border-gold/20 bg-gradient-to-br from-cream-200 via-cream to-gold/10 p-8 shadow-sm">
+              <div className="absolute right-8 top-8 h-16 w-16 rounded-full bg-gold-200/70" />
+              <div className="absolute bottom-10 left-10 h-24 w-24 rounded-full bg-gold/10" />
+              <div className="relative flex h-full min-h-[260px] items-center justify-center rounded-xl border border-dashed border-gold-200 bg-white/70 text-center">
+                <p className="max-w-[280px] text-sm font-medium text-gold">
                   Brand image or team photograph placeholder
                 </p>
               </div>
@@ -156,16 +156,16 @@ export default function AboutUsPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="bg-primary-50/40 py-14 md:py-20">
+      <section className="bg-cream-200/50 py-14 md:py-20">
         <div className="container">
           <div className="text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary-700">
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-gold">
               Why Choose Us
             </p>
-            <h2 className="mx-auto mt-3 max-w-2xl font-display text-3xl font-semibold text-navy-900 md:text-4xl">
+            <h2 className="mx-auto mt-3 max-w-2xl font-display text-3xl font-semibold text-ink md:text-4xl">
               What Sets Oxford Editors Apart
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-base text-navy-700">
+            <p className="mx-auto mt-4 max-w-xl text-base text-ink-light">
               We combine academic expertise with a genuine commitment to student success.
             </p>
           </div>
@@ -174,13 +174,13 @@ export default function AboutUsPage() {
             {values.map(({ icon: Icon, title, description }) => (
               <article
                 key={title}
-                className="rounded-xl border border-navy-100 bg-white p-6 shadow-sm"
+                className="rounded-xl border border-ink/10 bg-white p-6 shadow-sm"
               >
-                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary-100">
-                  <Icon className="h-5 w-5 text-primary-700" />
+                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-gold/10">
+                  <Icon className="h-5 w-5 text-gold" />
                 </div>
-                <h3 className="mt-4 text-lg font-semibold text-navy-900">{title}</h3>
-                <p className="mt-2 text-sm leading-7 text-navy-600">{description}</p>
+                <h3 className="mt-4 text-lg font-semibold text-ink">{title}</h3>
+                <p className="mt-2 text-sm leading-7 text-ink-light">{description}</p>
               </article>
             ))}
           </div>
@@ -194,13 +194,13 @@ export default function AboutUsPage() {
       <section className="bg-white py-14 md:py-20">
         <div className="container">
           <div className="text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary-700">
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-gold">
               Our Team
             </p>
-            <h2 className="mx-auto mt-3 max-w-2xl font-display text-3xl font-semibold text-navy-900 md:text-4xl">
+            <h2 className="mx-auto mt-3 max-w-2xl font-display text-3xl font-semibold text-ink md:text-4xl">
               Meet the People Behind Oxford Editors
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-base text-navy-700">
+            <p className="mx-auto mt-4 max-w-xl text-base text-ink-light">
               A dedicated team of academics and professionals committed to helping students succeed.
             </p>
           </div>
@@ -209,14 +209,14 @@ export default function AboutUsPage() {
             {team.map((member) => (
               <article
                 key={member.name}
-                className="rounded-xl border border-navy-100 bg-white p-6 text-center shadow-sm"
+                className="rounded-xl border border-ink/10 bg-white p-6 text-center shadow-sm"
               >
-                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-primary-50">
-                  <GraduationCap className="h-8 w-8 text-primary-600" />
+                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gold/10">
+                  <GraduationCap className="h-8 w-8 text-gold" />
                 </div>
-                <h3 className="mt-4 text-base font-semibold text-navy-900">{member.name}</h3>
-                <p className="mt-1 text-sm font-medium text-primary-700">{member.role}</p>
-                <p className="mt-3 text-sm leading-6 text-navy-600">{member.description}</p>
+                <h3 className="mt-4 text-base font-semibold text-ink">{member.name}</h3>
+                <p className="mt-1 text-sm font-medium text-gold">{member.role}</p>
+                <p className="mt-3 text-sm leading-6 text-ink-light">{member.description}</p>
               </article>
             ))}
           </div>
@@ -224,16 +224,16 @@ export default function AboutUsPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-navy-900 py-14 text-white md:py-20">
+      <section className="bg-ink py-14 text-white md:py-20">
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary-200">
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-gold-200">
               Ready to Get Started?
             </p>
             <h2 className="mt-3 font-display text-3xl font-semibold leading-tight md:text-4xl">
               Let Us Support Your Academic Success
             </h2>
-            <p className="mt-4 text-sm leading-7 text-navy-100">
+            <p className="mt-4 text-sm leading-7 text-ink-faint">
               Whether you need help with an essay, a dissertation, or exam preparation, our team is
               here to guide you every step of the way.
             </p>

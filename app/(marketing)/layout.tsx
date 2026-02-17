@@ -10,7 +10,7 @@ type MarketingLayoutProps = {
 
 export default function MarketingLayout({ children }: MarketingLayoutProps) {
   return (
-    <div className="min-h-screen bg-white text-navy-900">
+    <div className="min-h-screen bg-cream text-ink">
       <Header />
       <main id="main-content" className="min-h-screen pt-20">{children}</main>
       <Footer />

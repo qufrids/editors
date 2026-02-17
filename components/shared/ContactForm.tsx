@@ -9,9 +9,9 @@ import { contactSchema, type ContactSchemaData } from "@/lib/validations/contact
 import { cn } from "@/lib/utils";
 
 const inputClasses =
-  "h-11 w-full rounded-md border bg-white px-3 text-sm text-navy-900 placeholder:text-navy-400 focus:outline-none focus:ring-2 focus:ring-primary-500 disabled:cursor-not-allowed disabled:opacity-60";
+  "h-11 w-full rounded-md border bg-white px-3 text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:ring-2 focus:ring-gold disabled:cursor-not-allowed disabled:opacity-60";
 
-const labelClasses = "mb-1.5 block text-sm font-medium text-navy-800";
+const labelClasses = "mb-1.5 block text-sm font-medium text-ink";
 
 const errorClasses = "mt-1 text-sm text-red-600";
 
@@ -70,7 +70,6 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
-      {/* Row 1: Name & Email */}
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="contact-name" className={labelClasses}>
@@ -83,7 +82,7 @@ export function ContactForm() {
             autoComplete="name"
             disabled={isSubmitting}
             aria-invalid={errors.name ? "true" : "false"}
-            className={cn(inputClasses, errors.name ? "border-red-400 focus:ring-red-400" : "border-navy-200")}
+            className={cn(inputClasses, errors.name ? "border-red-400 focus:ring-red-400" : "border-ink/15")}
             {...register("name")}
           />
           {errors.name && <p className={errorClasses}>{errors.name.message}</p>}
@@ -100,14 +99,13 @@ export function ContactForm() {
             autoComplete="email"
             disabled={isSubmitting}
             aria-invalid={errors.email ? "true" : "false"}
-            className={cn(inputClasses, errors.email ? "border-red-400 focus:ring-red-400" : "border-navy-200")}
+            className={cn(inputClasses, errors.email ? "border-red-400 focus:ring-red-400" : "border-ink/15")}
             {...register("email")}
           />
           {errors.email && <p className={errorClasses}>{errors.email.message}</p>}
         </div>
       </div>
 
-      {/* Row 2: Phone & Subject */}
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="contact-phone" className={labelClasses}>
@@ -120,7 +118,7 @@ export function ContactForm() {
             autoComplete="tel"
             disabled={isSubmitting}
             aria-invalid={errors.phone ? "true" : "false"}
-            className={cn(inputClasses, errors.phone ? "border-red-400 focus:ring-red-400" : "border-navy-200")}
+            className={cn(inputClasses, errors.phone ? "border-red-400 focus:ring-red-400" : "border-ink/15")}
             {...register("phone")}
           />
           {errors.phone && <p className={errorClasses}>{errors.phone.message}</p>}
@@ -136,14 +134,13 @@ export function ContactForm() {
             placeholder="How can we help?"
             disabled={isSubmitting}
             aria-invalid={errors.subject ? "true" : "false"}
-            className={cn(inputClasses, errors.subject ? "border-red-400 focus:ring-red-400" : "border-navy-200")}
+            className={cn(inputClasses, errors.subject ? "border-red-400 focus:ring-red-400" : "border-ink/15")}
             {...register("subject")}
           />
           {errors.subject && <p className={errorClasses}>{errors.subject.message}</p>}
         </div>
       </div>
 
-      {/* Row 3: Message */}
       <div>
         <label htmlFor="contact-message" className={labelClasses}>
           Message <span className="text-red-500">*</span>
@@ -155,19 +152,18 @@ export function ContactForm() {
           disabled={isSubmitting}
           aria-invalid={errors.message ? "true" : "false"}
           className={cn(
-            "w-full resize-y rounded-md border bg-white px-3 py-2.5 text-sm text-navy-900 placeholder:text-navy-400 focus:outline-none focus:ring-2 focus:ring-primary-500 disabled:cursor-not-allowed disabled:opacity-60",
-            errors.message ? "border-red-400 focus:ring-red-400" : "border-navy-200",
+            "w-full resize-y rounded-md border bg-white px-3 py-2.5 text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:ring-2 focus:ring-gold disabled:cursor-not-allowed disabled:opacity-60",
+            errors.message ? "border-red-400 focus:ring-red-400" : "border-ink/15",
           )}
           {...register("message")}
         />
         {errors.message && <p className={errorClasses}>{errors.message.message}</p>}
       </div>
 
-      {/* Submit */}
       <button
         type="submit"
         disabled={isSubmitting}
-        className="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-primary-600 px-6 text-sm font-semibold text-white transition-colors hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
+        className="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-gold px-6 text-sm font-semibold text-ink transition-colors hover:bg-gold-500 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {isSubmitting ? (
           <>
@@ -179,7 +175,6 @@ export function ContactForm() {
         )}
       </button>
 
-      {/* Feedback */}
       {submitSuccess && (
         <div className="rounded-md border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800">
           {submitSuccess}

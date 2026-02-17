@@ -12,21 +12,21 @@ const lastUpdated = "17 February 2026";
 export default function TermsConditionPage() {
   return (
     <>
-      <section className="bg-gradient-to-b from-primary-50 via-white to-white py-14 md:py-20">
+      <section className="bg-gradient-to-b from-cream-200 via-cream to-cream py-14 md:py-20">
         <div className="container">
-          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary-700">
+          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-gold">
             Legal
           </p>
-          <h1 className="mt-3 font-display text-4xl font-semibold text-navy-900 md:text-5xl">
+          <h1 className="mt-3 font-display text-4xl font-semibold text-ink md:text-5xl">
             Terms &amp; Conditions
           </h1>
-          <p className="mt-3 text-sm text-navy-500">Last updated: {lastUpdated}</p>
+          <p className="mt-3 text-sm text-ink-muted">Last updated: {lastUpdated}</p>
         </div>
       </section>
 
       <section className="bg-white py-14 md:py-20">
         <div className="container max-w-3xl">
-          <div className="space-y-10 text-base leading-8 text-navy-700">
+          <div className="space-y-10 text-base leading-8 text-ink-light">
             {/* Introduction */}
             <div>
               <p>
@@ -39,7 +39,7 @@ export default function TermsConditionPage() {
 
             {/* 1 */}
             <div>
-              <h2 className="font-display text-2xl font-semibold text-navy-900">
+              <h2 className="font-display text-2xl font-semibold text-ink">
                 1. Service Terms
               </h2>
               <p className="mt-3">
@@ -73,7 +73,7 @@ export default function TermsConditionPage() {
 
             {/* 2 */}
             <div>
-              <h2 className="font-display text-2xl font-semibold text-navy-900">
+              <h2 className="font-display text-2xl font-semibold text-ink">
                 2. User Responsibilities
               </h2>
               <p className="mt-3">By using our services, you agree to:</p>
@@ -104,7 +104,7 @@ export default function TermsConditionPage() {
 
             {/* 3 */}
             <div>
-              <h2 className="font-display text-2xl font-semibold text-navy-900">
+              <h2 className="font-display text-2xl font-semibold text-ink">
                 3. Pricing and Payment
               </h2>
               <p className="mt-3">
@@ -129,7 +129,7 @@ export default function TermsConditionPage() {
 
             {/* 4 */}
             <div>
-              <h2 className="font-display text-2xl font-semibold text-navy-900">
+              <h2 className="font-display text-2xl font-semibold text-ink">
                 4. Revisions and Refunds
               </h2>
               <p className="mt-3">
@@ -161,7 +161,7 @@ export default function TermsConditionPage() {
                   To request a revision or refund, please contact us at{" "}
                   <a
                     href="mailto:info@oxfordeditors.co.uk"
-                    className="font-medium text-primary-700 hover:underline"
+                    className="font-medium text-gold hover:underline"
                   >
                     info@oxfordeditors.co.uk
                   </a>{" "}
@@ -172,7 +172,7 @@ export default function TermsConditionPage() {
 
             {/* 5 */}
             <div>
-              <h2 className="font-display text-2xl font-semibold text-navy-900">
+              <h2 className="font-display text-2xl font-semibold text-ink">
                 5. Intellectual Property
               </h2>
               <p className="mt-3">
@@ -186,7 +186,7 @@ export default function TermsConditionPage() {
 
             {/* 6 */}
             <div>
-              <h2 className="font-display text-2xl font-semibold text-navy-900">
+              <h2 className="font-display text-2xl font-semibold text-ink">
                 6. Limitation of Liability
               </h2>
               <ul className="mt-3 list-disc space-y-2 pl-6">
@@ -213,7 +213,7 @@ export default function TermsConditionPage() {
 
             {/* 7 */}
             <div>
-              <h2 className="font-display text-2xl font-semibold text-navy-900">
+              <h2 className="font-display text-2xl font-semibold text-ink">
                 7. Confidentiality
               </h2>
               <p className="mt-3">
@@ -226,7 +226,7 @@ export default function TermsConditionPage() {
 
             {/* 8 */}
             <div>
-              <h2 className="font-display text-2xl font-semibold text-navy-900">
+              <h2 className="font-display text-2xl font-semibold text-ink">
                 8. Governing Law
               </h2>
               <p className="mt-3">
@@ -238,7 +238,7 @@ export default function TermsConditionPage() {
 
             {/* 9 */}
             <div>
-              <h2 className="font-display text-2xl font-semibold text-navy-900">
+              <h2 className="font-display text-2xl font-semibold text-ink">
                 9. Changes to These Terms
               </h2>
               <p className="mt-3">
@@ -250,15 +250,15 @@ export default function TermsConditionPage() {
             </div>
 
             {/* Contact */}
-            <div className="rounded-xl border border-navy-100 bg-navy-50 p-6">
-              <h2 className="font-display text-lg font-semibold text-navy-900">
+            <div className="rounded-xl border border-ink/10 bg-cream p-6">
+              <h2 className="font-display text-lg font-semibold text-ink">
                 Questions?
               </h2>
-              <p className="mt-2 text-sm leading-7 text-navy-700">
+              <p className="mt-2 text-sm leading-7 text-ink-light">
                 If you have any questions about these Terms, please contact us at{" "}
                 <a
                   href="mailto:info@oxfordeditors.co.uk"
-                  className="font-medium text-primary-700 hover:underline"
+                  className="font-medium text-gold hover:underline"
                 >
                   info@oxfordeditors.co.uk
                 </a>
