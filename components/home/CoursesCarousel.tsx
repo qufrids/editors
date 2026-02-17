@@ -71,7 +71,7 @@ export function CoursesCarousel({ courses }: CoursesCarouselProps) {
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <span className="absolute left-3 top-3 rounded-full bg-primary-600 px-3 py-1 text-xs font-semibold text-white">
-                      £{course.price}
+                      Â£{course.price}
                     </span>
                   </div>
 
