@@ -1,33 +1,28 @@
-import Link from "next/link";
+import { Award, BookOpen, GraduationCap, Shield, Users } from "lucide-react";
 
-const partnerPlaceholders = Array.from({ length: 9 }, (_, index) => `Partner ${index + 1}`);
+const trustSignals = [
+  { icon: Users, label: "2,000+ Students Helped" },
+  { icon: GraduationCap, label: "50+ Subject Areas" },
+  { icon: Award, label: "98% Satisfaction Rate" },
+  { icon: Shield, label: "Confidential & Secure" },
+  { icon: BookOpen, label: "All UK Universities" },
+];
 
 export function PartnersSection() {
   return (
-    <section className="bg-white py-16 md:py-20">
-      <div className="container text-center">
-        <h2 className="font-display text-3xl font-semibold text-navy-900 md:text-4xl">
-          Partnerships Driving Quality Academic Support
-        </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-navy-700">
-          We collaborate with trusted academic and professional networks to strengthen service quality, subject coverage,
-          and student outcomes across higher education.
+    <section className="border-y border-navy-100 bg-white py-14">
+      <div className="container">
+        <p className="mb-8 text-center text-sm font-semibold uppercase tracking-widest text-navy-500">
+          Trusted Across UK Higher Education
         </p>
-
-        <div className="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {partnerPlaceholders.map((label) => (
-            <div
-              key={label}
-              className="group flex h-28 items-center justify-center rounded-xl border border-navy-100 bg-navy-50/60 px-5 text-sm font-semibold text-navy-500 grayscale transition-all duration-300 hover:-translate-y-0.5 hover:text-navy-800 hover:grayscale-0 hover:shadow-md"
-            >
-              <span>{label} Logo</span>
+        <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
+          {trustSignals.map(({ icon: Icon, label }) => (
+            <div key={label} className="flex items-center gap-3 text-navy-600">
+              <Icon className="h-5 w-5 text-primary-600" />
+              <span className="text-sm font-semibold">{label}</span>
             </div>
           ))}
         </div>
-
-        <Link href="/partners" className="mt-8 inline-block text-sm font-semibold text-primary-700 hover:text-primary-800">
-          Browse all partner
-        </Link>
       </div>
     </section>
   );

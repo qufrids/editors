@@ -92,7 +92,7 @@ export function Footer() {
         </div>
 
         <div className="mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 md:flex-row md:items-center md:justify-between">
-          <p className="text-sm text-navy-300">Copyright� 2024 Oxford Editor, All rights reserved.</p>
+          <p className="text-sm text-navy-300">{"\u00A9"} {new Date().getFullYear()} Oxford Editors. All rights reserved.</p>
           <div className="flex items-center gap-3">
             {socialLinks.map(({ name, href, icon: Icon }) => (
               <a

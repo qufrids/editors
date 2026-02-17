@@ -1,42 +1,93 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { ArrowRight, BookOpen, GraduationCap, Shield, Star } from "lucide-react";
+
 import { Button } from "@/components/shared/Button";
+
+const highlights = [
+  { icon: GraduationCap, text: "Expert UK Academics" },
+  { icon: Shield, text: "100% Plagiarism Free" },
+  { icon: BookOpen, text: "All Subjects Covered" },
+];
 
 export function HeroSection() {
   return (
-    <section className="bg-gradient-to-r from-primary-50 via-white to-primary-50">
-      <div className="container py-16 md:py-24 lg:py-28">
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary-700">Welcome to Oxford Editors</p>
-            <h1 className="mt-4 font-display text-5xl font-semibold leading-tight text-navy-900 lg:text-6xl">
-              Partnering with You for Academic Brilliance
-            </h1>
-            <p className="mt-6 max-w-xl text-base leading-7 text-navy-700 md:text-lg">
-              We provide focused academic support for students across the UK, from coursework and dissertation guidance to
-              technical project assistance. Our approach combines subject-aware expertise, clear communication, and
-              quality-first delivery to help you progress with confidence.
-            </p>
+    <section className="relative overflow-hidden bg-navy-900">
+      {/* Background pattern */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(14,165,233,0.15),transparent_50%),radial-gradient(circle_at_80%_80%,rgba(14,165,233,0.1),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiLz48L3N2Zz4=')] opacity-60" />
 
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <Button href="/contact-us" variant="primary" size="lg">
-                Get Started
-              </Button>
-              <Button href="/contact-us" variant="outline" size="lg">
-                Contact Us
-              </Button>
+      <div className="container relative py-20 md:py-28 lg:py-36">
+        <div className="mx-auto max-w-4xl text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="mx-auto mb-6 inline-flex items-center gap-2 rounded-full border border-primary-500/30 bg-primary-500/10 px-4 py-2 text-sm font-medium text-primary-300">
+              <Star className="h-4 w-4 fill-primary-400 text-primary-400" />
+              Trusted by 2,000+ UK Students
             </div>
-          </div>
+          </motion.div>
 
-          <div className="relative min-h-[280px] rounded-2xl border border-primary-100 bg-white/70 p-8 shadow-sm">
-            <div className="absolute -left-5 -top-5 h-20 w-20 rounded-full bg-primary-100" />
-            <div className="absolute -bottom-6 right-8 h-24 w-24 rounded-full bg-primary-200/70" />
-            <div className="relative flex h-full min-h-[220px] items-center justify-center rounded-xl border border-dashed border-primary-200 bg-primary-50/50 text-center">
-              <p className="max-w-[260px] text-sm font-medium text-primary-700">
-                Decorative space reserved for a future hero image or illustration.
-              </p>
-            </div>
-          </div>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="font-display text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
+          >
+            Your Partner in{" "}
+            <span className="bg-gradient-to-r from-primary-400 to-primary-300 bg-clip-text text-transparent">
+              Academic Excellence
+            </span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-navy-300 md:text-xl"
+          >
+            Expert academic support for UK university students. From essays and dissertations
+            to technical projects — we help you achieve the grades you deserve.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+          >
+            <Button href="/contact-us" variant="primary" size="lg" className="h-13 rounded-xl px-8 text-base shadow-lg shadow-primary-600/25">
+              Get Started Today
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+            <Button href="/services" variant="ghost" size="lg" className="h-13 rounded-xl px-8 text-base text-white hover:bg-white/10">
+              Browse Services
+            </Button>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="mx-auto mt-14 flex flex-wrap items-center justify-center gap-x-8 gap-y-4"
+          >
+            {highlights.map(({ icon: Icon, text }) => (
+              <div key={text} className="flex items-center gap-2.5 text-sm text-navy-300">
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/10">
+                  <Icon className="h-4 w-4 text-primary-400" />
+                </div>
+                <span className="font-medium">{text}</span>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </div>
+
+      {/* Bottom fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-500/30 to-transparent" />
     </section>
   );
 }

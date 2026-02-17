@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Star } from "lucide-react";
 
 import { Button } from "@/components/shared/Button";
 import type { Course } from "@/types";
@@ -37,12 +37,19 @@ export function CoursesCarousel({ courses }: CoursesCarouselProps) {
   };
 
   return (
-    <section className="bg-primary-50/40 py-16 md:py-20">
+    <section className="bg-navy-50/50 py-20 md:py-24">
       <div className="container">
-        <div className="mb-7 flex items-center justify-between gap-4">
-          <h2 className="font-display text-3xl font-semibold text-navy-900 md:text-4xl">Featured Courses</h2>
-          <Link href="/courses" className="text-sm font-semibold text-primary-700 transition-colors hover:text-primary-800">
-            All Courses ?
+        <div className="mb-10 flex items-end justify-between gap-4">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-widest text-primary-600">Explore Courses</p>
+            <h2 className="mt-3 font-display text-3xl font-bold text-navy-900 sm:text-4xl">Featured Courses</h2>
+          </div>
+          <Link
+            href="/courses"
+            className="hidden items-center gap-1 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700 sm:flex"
+          >
+            View All Courses
+            <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
 
@@ -60,9 +67,9 @@ export function CoursesCarousel({ courses }: CoursesCarouselProps) {
               {visibleCourses.map((course) => (
                 <article
                   key={course.id}
-                  className="group overflow-hidden rounded-xl border border-navy-100 bg-white shadow-sm transition-shadow duration-300 hover:shadow-xl"
+                  className="group overflow-hidden rounded-2xl border border-navy-100 bg-white shadow-sm transition-all duration-300 hover:shadow-lg"
                 >
-                  <div className="relative h-44 w-full overflow-hidden">
+                  <div className="relative h-48 w-full overflow-hidden">
                     <Image
                       src={course.image_url}
                       alt={course.title}
@@ -70,22 +77,24 @@ export function CoursesCarousel({ courses }: CoursesCarouselProps) {
                       sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <span className="absolute left-3 top-3 rounded-full bg-primary-600 px-3 py-1 text-xs font-semibold text-white">
-                      £{course.price}
+                    <span className="absolute left-3 top-3 rounded-full bg-primary-600 px-3 py-1 text-xs font-bold text-white shadow-sm">
+                      {"\u00A3"}{course.price}
                     </span>
                   </div>
 
                   <div className="p-5">
-                    <h3 className="line-clamp-2 text-lg font-semibold text-navy-900">{course.title}</h3>
-                    <p className="mt-2 line-clamp-2 text-sm text-navy-600">{course.subtitle}</p>
+                    <h3 className="line-clamp-2 font-display text-base font-bold text-navy-900 group-hover:text-primary-700">
+                      {course.title}
+                    </h3>
+                    <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-navy-600">{course.subtitle}</p>
 
-                    <div className="mt-4 flex items-center gap-1.5 text-sm text-amber-500">
-                      <Star className="h-4 w-4 fill-current" />
-                      <span className="font-medium text-navy-800">{course.rating.toFixed(1)}</span>
+                    <div className="mt-4 flex items-center gap-1.5">
+                      <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
+                      <span className="text-sm font-semibold text-navy-800">{course.rating.toFixed(1)}</span>
                     </div>
 
-                    <Button href={`/courses/${course.slug}`} variant="outline" className="mt-5 w-full">
-                      Get Support
+                    <Button href={`/courses/${course.slug}`} variant="outline" className="mt-5 w-full rounded-xl">
+                      View Course
                     </Button>
                   </div>
                 </article>
@@ -94,23 +103,33 @@ export function CoursesCarousel({ courses }: CoursesCarouselProps) {
           </AnimatePresence>
         </div>
 
-        <div className="mt-7 flex items-center justify-end gap-2">
-          <button
-            type="button"
-            onClick={goPrev}
-            aria-label="Previous courses"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-navy-200 bg-white text-navy-700 transition-colors hover:bg-navy-50"
+        <div className="mt-8 flex items-center justify-between">
+          <Link
+            href="/courses"
+            className="flex items-center gap-1 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700 sm:hidden"
           >
-            <ChevronLeft className="h-5 w-5" />
-          </button>
-          <button
-            type="button"
-            onClick={goNext}
-            aria-label="Next courses"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-navy-200 bg-white text-navy-700 transition-colors hover:bg-navy-50"
-          >
-            <ChevronRight className="h-5 w-5" />
-          </button>
+            View All Courses
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+
+          <div className="ml-auto flex items-center gap-2">
+            <button
+              type="button"
+              onClick={goPrev}
+              aria-label="Previous courses"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-navy-200 bg-white text-navy-700 transition-colors hover:bg-navy-50 hover:text-navy-900"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <button
+              type="button"
+              onClick={goNext}
+              aria-label="Next courses"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-navy-200 bg-white text-navy-700 transition-colors hover:bg-navy-50 hover:text-navy-900"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
+          </div>
         </div>
       </div>
     </section>

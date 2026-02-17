@@ -1,4 +1,4 @@
-import { BadgeCheck, BookOpenCheck, GraduationCap } from "lucide-react";
+import { BadgeCheck, BookOpenCheck, GraduationCap, ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/shared/Button";
 
@@ -6,58 +6,71 @@ const features = [
   {
     title: "Certified Expertise",
     description:
-      "Our team includes experienced academic specialists who understand university standards, assessment criteria, and research expectations.",
+      "Experienced academic specialists who understand university standards, assessment criteria, and research expectations.",
     icon: BadgeCheck,
+    color: "text-primary-600 bg-primary-50",
   },
   {
     title: "Higher Education Focus",
     description:
-      "We work specifically with undergraduate and postgraduate learners, tailoring support to UK higher-education requirements.",
+      "We work specifically with undergraduate and postgraduate learners, tailoring support to UK university requirements.",
     icon: GraduationCap,
+    color: "text-violet-600 bg-violet-50",
   },
   {
-    title: "Comprehensive Academic Support",
+    title: "End-to-End Support",
     description:
-      "From assignments and dissertations to editing and technical projects, we provide practical end-to-end academic assistance.",
+      "From assignments and dissertations to editing and technical projects, comprehensive academic assistance at every stage.",
     icon: BookOpenCheck,
+    color: "text-emerald-600 bg-emerald-50",
   },
 ];
 
 export function AboutSection() {
   return (
-    <section className="bg-white py-16 md:py-24">
+    <section className="bg-white py-20 md:py-28">
       <div className="container">
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-14">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary-700">About Us</p>
-            <h2 className="mt-3 font-display text-4xl font-semibold leading-tight text-navy-900 md:text-5xl">
-              Partnering with You for Academic Brilliance
+            <p className="text-sm font-semibold uppercase tracking-widest text-primary-600">About Oxford Editors</p>
+            <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-navy-900 sm:text-4xl md:text-5xl">
+              Academic Support You Can <span className="text-primary-600">Trust</span>
             </h2>
-            <p className="mt-6 max-w-xl text-base leading-7 text-navy-700 md:text-lg">
+            <p className="mt-6 text-lg leading-relaxed text-navy-600">
               Oxford Editors supports students with professional, reliable academic guidance designed for real university
               demands. We combine subject-aware expertise with clear communication and quality-focused delivery so that
-              every piece of work is structured, polished, and assessment-ready. Our mission is to help students across
-              the UK progress with confidence, clarity, and stronger academic outcomes.
+              every piece of work is structured, polished, and assessment-ready.
             </p>
 
-            <div className="mt-8 rounded-xl border border-primary-100 bg-primary-50/60 p-6">
-              <h3 className="font-display text-2xl font-semibold text-navy-900">
-                Academic Challenges? Reach Out for Expert Help Today!
+            <div className="mt-10 rounded-2xl border border-navy-100 bg-gradient-to-br from-navy-900 to-navy-800 p-8">
+              <h3 className="font-display text-xl font-bold text-white sm:text-2xl">
+                Struggling with your academic work?
               </h3>
-              <Button href="/contact-us" className="mt-5" size="lg">
+              <p className="mt-2 text-sm leading-relaxed text-navy-300">
+                Get matched with an expert in your subject area. Fast turnaround, guaranteed quality.
+              </p>
+              <Button href="/contact-us" className="mt-6 rounded-xl" size="lg">
                 Get Expert Support
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-            {features.map(({ title, description, icon: Icon }) => (
-              <article key={title} className="rounded-xl border border-navy-100 bg-white p-6 shadow-sm">
-                <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-primary-100 text-primary-700">
-                  <Icon className="h-5 w-5" />
+          <div className="space-y-5">
+            {features.map(({ title, description, icon: Icon, color }) => (
+              <article
+                key={title}
+                className="group rounded-2xl border border-navy-100 bg-white p-6 shadow-sm transition-all duration-300 hover:border-primary-200 hover:shadow-md"
+              >
+                <div className="flex items-start gap-5">
+                  <div className={`inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${color}`}>
+                    <Icon className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-navy-900">{title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-navy-600">{description}</p>
+                  </div>
                 </div>
-                <h3 className="mt-4 text-lg font-semibold text-navy-900">{title}</h3>
-                <p className="mt-2 text-sm leading-6 text-navy-700">{description}</p>
               </article>
             ))}
           </div>
